@@ -1,5 +1,6 @@
 import pygame
 import random
+import sys
 
 MAX_X = 1366
 MAX_Y = 768
@@ -41,3 +42,9 @@ def initialized_animal(max_animals, animals):
         x = random.randint(0, MAX_X)
         y = random.randint(0, MAX_Y)
         animals.append(Animal(x, y))
+
+
+def check_for_exit():
+    for event in pygame.event.get():
+        if event.type == pygame.KEYDOWN:
+            sys.exit()
