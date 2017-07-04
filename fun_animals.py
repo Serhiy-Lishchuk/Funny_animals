@@ -1,16 +1,13 @@
 import pygame
 import random
 import sys
+from config.config import ANIMAL_SIZE, BG_COLOUR, MAX_ANIMALS, MAX_X, MAX_Y
 
-MAX_X = 1366
-MAX_Y = 768
-MAX_ANIMALS = 100
-ANIMAL_SIZE = 64
 animals = []
-BG_COLOUR = (0, 0, 0)
 
 
 class Animal():
+
     def __init__(self, x, y):
         self.x = x
         self.y = y
@@ -56,7 +53,7 @@ def main():
     initialized_animal(MAX_ANIMALS, animals)
 
     while True:
-        screen.fill(BG_COLOUR)
+        screen.fill(pygame.Color(BG_COLOUR))
         check_for_exit()
         for a in animals:
             a.move_animal()
